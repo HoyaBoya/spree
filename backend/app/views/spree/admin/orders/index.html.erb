@@ -65,6 +65,12 @@
             <%= Spree.t(:show_only_complete_orders) %>
           </label>
         </div>
+        <div class="field checkbox">
+          <label>
+            <%= f.check_box :considered_risky, {:checked => :params[:q][:considered_risky_eq]}, 'true', '' %>
+            <%= Spree.t(:show_only_considered_risky) %>
+          </label>
+        </div>
         <div class="field">
           <%= label_tag nil, Spree.t(:promotion) %>
           <%= f.select :promotions_id_in, Spree::Promotion.applied.pluck(:name, :id), {:include_blank => true}, :class => 'select2' %>

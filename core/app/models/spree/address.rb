@@ -126,8 +126,10 @@ module Spree
           end
         end
 
+        binding.pry
+
         # ensure at least one state field is populated
-        errors.add :state, :blank if state.blank? && state_name.blank?
+        errors.add :state, :blank if state_id.blank? && state.blank? && state_name.blank?
       end
 
       def postal_code_validate

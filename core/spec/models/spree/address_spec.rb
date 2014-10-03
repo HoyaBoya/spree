@@ -77,6 +77,13 @@ describe Spree::Address do
       address.should be_valid
     end
 
+    it "state_id is present but not name nor text" do
+      address.state_name = nil
+      address.state = nil
+      address.state_id = 48
+      address.should be_valid
+    end
+
     it "errors when state_name is nil" do
       address.state_name = nil
       address.state = nil

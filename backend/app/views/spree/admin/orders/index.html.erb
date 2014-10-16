@@ -49,6 +49,10 @@
           <%= label_tag nil, Spree.t(:email) %>
           <%= f.text_field :email_cont %>
         </div>
+        <div class="field">
+          <%= label_tag :q_line_items_variants_id_in, Spree.t(:line_item) %>
+          <%= f.select :line_items_variants_id_in, Spree::Variant.applied.pluck(:name, :id), {:include_blank => true}, :class => 'select2' %>
+        </div>
       </div>
 
       <div class="four columns">
